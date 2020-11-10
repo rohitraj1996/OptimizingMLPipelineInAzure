@@ -37,7 +37,15 @@ AutoML performs slightly better than HyperDrive in accuracy by 0.01. The best mo
 
 Architecture wise both are different, but idea is same. The main advantage of AutoML is that we have many possibilities to increase search of better algorithm and hyperparameters.
 
-## Future work
-In future experiments I will try other primary metrics like 'AUC', 'weighted accuracy', etc. Accuracy is basic metric and it is useful to take other metrics too, to gain more insights.
+In AutoML, it provides warnings for class imbalance and data checks. It also provides top features to select best model. AutoML also imputes missing feature values.
 
-Also we can try other hyperparameters of AutoML like increase number of cross-validation, increase timeout duration.
+While in Hyperdrive, we only build one model which we think is best and tune it's hyperparameters (those which we think is best).
+
+AutoML provides a wide variety of models and preprocessing steps whic is not there in Hyperdrive.
+
+## Future work
+In future experiments I will try other primary metrics like 'AUC', 'weighted accuracy', etc. Accuracy is basic metric and it is useful to take other metrics too, to gain more insights. "AUC" gives the arithmetic mean of the score for each class, weighted by the true number of true instances in each class.
+
+Also we can try other hyperparameters of AutoML like increase number of cross-validation.
+
+As increase timeout duration was capped to 30 minutes so there could only be a limited number of models that can be runned on that time period, so a longer timeout could have greater number of models to run and thus improving the performance.  
