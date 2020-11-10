@@ -30,7 +30,16 @@ We choose 'RandomParameterSampling' which uses random sampling over a hyperparam
 We used 'BanditPolicy' for early stopping policy as it will help in stooping the experiment if metric falls below certain threshold (slack_factor).
 
 ## AutoML
-AutoML is advanced tool in Azure which let's our work much easier. AutoML search through all algorithms (unless blacklisted) and find the best one. The basic configuration of AutoML that we used are experiment timeout to 30 minutes (due to resource limitations), primary metric was 'accuracy' and cross validation set to 5.
+AutoML is advanced tool in Azure which let's our work much easier. AutoML search through all algorithms (unless blacklisted) and find the best one. 
+
+-   The basic configuration of AutoML that we used are:
+    - timeout to 30 minutes (due to resource limitations)
+    - primary metric was "accuracy"
+    - cross validation set to 5 to avoid overfitting.
+    - task name was "classification".
+    - data in which target column name is "y".
+
+AutoML tries a lot of algorithm and the best model was "VotingEnsemble" having accuracy of "0.9177". It generates 21 metric values like "AUC_weighted", "weighted_accuracy", etc. It also creates confusion matix and accuracy table. We can use these metrics to gain a lot of insights. We can also see model's explanation like top "x" feature. 
 
 ## Pipeline comparison
 AutoML performs slightly better than HyperDrive in accuracy by 0.01. The best model choosed by AutoML was VotingEnsemble.
