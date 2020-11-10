@@ -50,7 +50,7 @@ In AutoML, it provides warnings for class imbalance and data checks. It also pro
 
 While in Hyperdrive, we only build one model which we think is best and tune it's hyperparameters (those which we think is best).
 
-AutoML provides a wide variety of models and preprocessing steps whic is not there in Hyperdrive.
+AutoML provides a wide variety of models and preprocessing steps which is not there in Hyperdrive.
 
 ## Future work
 In future experiments I will try other primary metrics like 'AUC', 'weighted accuracy', etc. Accuracy is basic metric and it is useful to take other metrics too, to gain more insights. "AUC" gives the arithmetic mean of the score for each class, weighted by the true number of true instances in each class.
