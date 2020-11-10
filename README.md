@@ -39,6 +39,14 @@ AutoML is advanced tool in Azure which let's our work much easier. AutoML search
     - task name was "classification".
     - data in which target column name is "y".
 
+- "VotingEnsemble" uses few algorithms like "XGBoostClassifier", "LightGBMClassifier". Few of hyperparameters for  "XGBoostClassifier" which is learnt by AutoML are:
+    - "n_estimators": Number of boosting rounds.
+    - "learning_rate": Rate at which classifier will learn.
+    - "max_depth": Maximum tree depth for base learners.
+
+Below is the full list of hyperparameters:
+!["XGBoostClassifier estimator of VotingEnsemble"](./screenshots/xgboost_hyperparameters_used_by_automl.PNG) Also added cell in notebook where we can see all estimators used with various hyperparameters.
+
 AutoML tries a lot of algorithm and the best model was "VotingEnsemble" having accuracy of "0.9177". It generates 21 metric values like "AUC_weighted", "weighted_accuracy", etc. It also creates confusion matix and accuracy table. We can use these metrics to gain a lot of insights. We can also see model's explanation like top "x" feature. 
 
 ## Pipeline comparison
